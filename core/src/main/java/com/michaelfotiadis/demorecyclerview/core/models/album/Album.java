@@ -1,18 +1,32 @@
 package com.michaelfotiadis.demorecyclerview.core.models.album;
 
-import com.google.gson.annotations.SerializedName;
+import android.os.Parcel;
 
-public class Album {
+import com.michaelfotiadis.demorecyclerview.core.models.base.ApiModel;
 
-    @SerializedName("albumId")
-    public Integer albumId;
-    @SerializedName("id")
-    public Integer id;
-    @SerializedName("title")
-    public String title;
-    @SerializedName("url")
-    public String url;
-    @SerializedName("thumbnailUrl")
-    public String thumbnailUrl;
+/**
+ *
+ */
+public interface Album extends ApiModel {
+    Creator<Album> CREATOR = new Creator<Album>() {
+        @Override
+        public Album createFromParcel(final Parcel source) {
+            return new AlbumImpl(source);
+        }
 
+        @Override
+        public Album[] newArray(final int size) {
+            return new Album[size];
+        }
+    };
+
+    Integer getAlbumId();
+
+    Integer getId();
+
+    String getThumbnailUrl();
+
+    String getTitle();
+
+    String getUrl();
 }

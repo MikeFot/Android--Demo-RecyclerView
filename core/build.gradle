@@ -16,6 +16,8 @@ android {
 
     packagingOptions.excludes = getDefaultExcludes();
 
+    publishNonDefault true
+
     defaultConfig {
         minSdkVersion minSdkRed
         targetSdkVersion targetSdk

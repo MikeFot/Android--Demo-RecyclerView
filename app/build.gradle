@@ -82,7 +82,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile project(':core')
+    releaseCompile project(path: ':core', configuration: 'release')
+    debugCompile project(path: ':core', configuration: 'debug')
 
     compile 'com.jakewharton:butterknife:7.0.1'
     compile "com.android.support:appcompat-v7:$appCompatLibVersion"
