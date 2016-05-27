@@ -125,4 +125,15 @@ public class AlbumImpl implements Album {
             return new AlbumImpl(this);
         }
     }
+
+    @Override
+    public String toString() {
+        return "AlbumImpl{" +
+                "albumId=" + albumId +
+                ", id=" + id +
+                ", title='" + title + '\'' +
+                ", url='" + url + '\'' +
+                ", thumbnailUrl='" + thumbnailUrl + '\'' +
+                '}';
+    }
 }

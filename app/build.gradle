@@ -26,7 +26,8 @@ android {
 
         proguardFiles getDefaultProguardFile('proguard-android.txt'),
                 'proguard/gson.pro',
-                'proguard/butterknife.pro'
+                'proguard/butterknife.pro',
+                'proguard/retrofit.pro'
 
 
         buildConfigField "String", "GIT_SHA", quoteString(gitSha())
