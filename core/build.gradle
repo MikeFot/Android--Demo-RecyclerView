@@ -26,9 +26,15 @@ android {
         versionName semanticVersion
     }
     buildTypes {
+        debug {
+            debuggable true
+            buildConfigField "String", "API_ENDPOINT_STRING", "\"http://jsonplaceholder.typicode.com/\""
+
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_ENDPOINT_STRING", "\"http://jsonplaceholder.typicode.com/\""
         }
     }
 }
@@ -36,6 +42,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
 
     compile 'com.google.code.gson:gson:2.4'
 
