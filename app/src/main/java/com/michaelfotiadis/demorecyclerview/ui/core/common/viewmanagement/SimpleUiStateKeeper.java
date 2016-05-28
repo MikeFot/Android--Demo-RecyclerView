@@ -129,7 +129,8 @@ public class SimpleUiStateKeeper implements UiStateKeeper {
     }
 
     @Override
-    public void showError(final CharSequence message, final QuoteOnClickListenerWrapper listenerWrapper) {
+    public void showError(final CharSequence message,
+                          final QuoteOnClickListenerWrapper listenerWrapper) {
         validateErrorView();
         mErrorPageController.display(message, listenerWrapper);
         mFlipper.setDisplayedChild(mErrorViewIndex);

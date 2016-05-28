@@ -118,7 +118,7 @@ public class HomeFragment extends BaseFragment implements DataLoader {
             }
         });
         AppLog.d("Loading Albums");
-        mRecyclerManager.updateUiState();
+        mRecyclerManager.clearError();
         loader.loadData();
     }
 

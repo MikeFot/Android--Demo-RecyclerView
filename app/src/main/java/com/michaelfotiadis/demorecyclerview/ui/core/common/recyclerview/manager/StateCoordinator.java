@@ -60,7 +60,7 @@ import com.michaelfotiadis.demorecyclerview.ui.core.common.viewmanagement.UiStat
             }
         }
 
-        if (currentState != state) {
+        if (currentState != state || currentState.equals(State.ERROR)) {
             currentState = state;
 
             if (uiStateKeeper != null) {
