@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 /**
  *
  */
-public class HttpUtilsTest {
+public class UrlUtilsTest {
 
     @Test
     public void testIsUrlValid() throws Exception {
@@ -19,11 +19,11 @@ public class HttpUtilsTest {
         final String invalid2 = null;
         final String invalid3 = "";
 
-        assertTrue(HttpUtils.isUrlValid(valid1));
-        assertTrue(HttpUtils.isUrlValid(valid2));
-        assertFalse(HttpUtils.isUrlValid(invalid1));
-        assertFalse(HttpUtils.isUrlValid(invalid2));
-        assertFalse(HttpUtils.isUrlValid(invalid3));
+        assertTrue(UrlUtils.isURL(valid1));
+        assertTrue(UrlUtils.isURL(valid2));
+        assertFalse(UrlUtils.isURL(invalid1));
+        assertFalse(UrlUtils.isURL(invalid2));
+        assertFalse(UrlUtils.isURL(invalid3));
 
     }
 }

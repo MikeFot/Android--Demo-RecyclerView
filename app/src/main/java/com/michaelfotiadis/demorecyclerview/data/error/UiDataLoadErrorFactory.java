@@ -19,13 +19,13 @@ public final class UiDataLoadErrorFactory {
                                               final CommonError error) {
         final UiDataLoadError.ErrorKind kind = translate(error.getKind());
 
-        if (error.getKind() == CommonErrorKind.NO_NETWORK) {
+        if (error.getKind().equals(CommonErrorKind.NO_NETWORK)) {
             return createDeviceOfflineError(context);
         } else {
-
-            final CharSequence message = getMessageFromKind(context, kind);
-
-            return new UiDataLoadError(message, kind, false);
+            return new UiDataLoadError(
+                    getMessageFromKind(context, kind),
+                    kind,
+                    isRecoverable(kind));
         }
     }
 
@@ -71,6 +71,19 @@ public final class UiDataLoadErrorFactory {
                 context.getString(R.string.friendly_error_you_are_offline),
                 UiDataLoadError.ErrorKind.NO_NETWORK,
                 true);
+    }
+
+    private static boolean isRecoverable(final UiDataLoadError.ErrorKind kind) {
+        switch (kind) {
+            case UNKNOWN:
+                return false;
+            case NO_NETWORK:
+                return true;
+            case NO_DATA:
+                return false;
+            default:
+                return false;
+        }
     }
 
     private static CharSequence getMessageFromKind(final Context context,

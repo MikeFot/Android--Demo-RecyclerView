@@ -16,7 +16,7 @@
     <drawable name="selected_gray">@color/md_grey_500</drawable>
 
     <color name="window_background">@color/md_grey_200</color>
-    <color name="window_background_alt">@color/primary_light</color>
+    <color name="window_background_alt">@color/md_indigo_50</color>
 
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>

@@ -2,7 +2,7 @@ package com.michaelfotiadis.demorecyclerview.ui.components.home;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +21,7 @@ import com.michaelfotiadis.demorecyclerview.ui.core.common.recyclerview.manager.
 import com.michaelfotiadis.demorecyclerview.ui.core.common.viewmanagement.SimpleUiStateKeeper;
 import com.michaelfotiadis.demorecyclerview.ui.core.common.viewmanagement.UiStateKeeper;
 import com.michaelfotiadis.demorecyclerview.utils.AppLog;
+import com.michaelfotiadis.demorecyclerview.utils.DeviceFormUtils;
 
 import java.util.List;
 import java.util.Locale;
@@ -41,6 +42,12 @@ public class HomeFragment extends BaseFragment implements DataLoader {
         return new HomeFragment();
     }
 
+    @Override
+    public void onCreate(final Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
+    }
+
     @Nullable
     @Override
     public View onCreateView(final LayoutInflater inflater,
@@ -58,8 +65,15 @@ public class HomeFragment extends BaseFragment implements DataLoader {
         ButterKnife.bind(this, view);
 
         final UiStateKeeper uiStateKeeper = new SimpleUiStateKeeper(view, mRecyclerView);
+
+        final int columns = new DeviceFormUtils(getContext()).getColumnsForScreen();
+        AppLog.d("Number of columns: " + columns);
+
+        final GridLayoutManager mLayoutManager = new GridLayoutManager(getActivity(), columns);
+        mLayoutManager.setOrientation(GridLayoutManager.VERTICAL);
+
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecyclerManager = new RecyclerManager.Builder<>(
                 new AlbumRecyclerViewAdapter(
@@ -71,12 +85,6 @@ public class HomeFragment extends BaseFragment implements DataLoader {
                 .setEmptyMessage(getString(R.string.friendly_error_no_data))
                 .build();
 
-    }
-
-    @Override
-    public void onCreate(final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setRetainInstance(true);
     }
 
     @Override
@@ -109,7 +117,8 @@ public class HomeFragment extends BaseFragment implements DataLoader {
 
             }
         });
-        AppLog.d("Loading UiMovies");
+        AppLog.d("Loading Albums");
+        mRecyclerManager.updateUiState();
         loader.loadData();
     }
 

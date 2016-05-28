@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/DemoApp.AppTheme">
         <activity
-            android:name=".ui.components.home.HomeActivity">
+            android:name=".ui.components.home.HomeActivity"
+            android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
