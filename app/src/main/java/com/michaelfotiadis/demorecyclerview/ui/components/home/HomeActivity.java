@@ -22,7 +22,7 @@ public class HomeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(LAYOUT_ID);
-
+        setTitle(getString(R.string.title_home_activity));
         addContentFragmentIfMissing(HomeFragment.newInstance(), FRAGMENT_TAG);
 
     }
