@@ -29,9 +29,8 @@ public class AlbumListCallback implements Callback<List<Album>> {
     public void onResponse(final Call<List<Album>> call,
                            final Response<List<Album>> response) {
 
+        // checking 200 is good enough for the demo!
         if (response.code() == 200) {
-            // 200 is good enough for the demo
-
             final ValidationResult result = validateResults(response.body());
             if (result.isValid()) {
                 CoreLog.d(String.format(Locale.UK, "Received %d valid Albums", response.body().size()));
@@ -59,13 +58,10 @@ public class AlbumListCallback implements Callback<List<Album>> {
         final Validator<Album> validator = new ValidatorProcessorImpl().getValidator(Album.class);
 
         for (final Album item : items) {
-
             final ValidationResult result = validator.validate(item);
-
             if (!result.isValid()) {
                 return result;
             }
-
         }
 
         return new ValidationResult(true);
