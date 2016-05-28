@@ -4,7 +4,7 @@ import android.os.Parcelable;
 
 /**
  */
-public interface ApiModel extends Parcelable {
+public interface BaseApiModel extends Parcelable {
 
 
 }

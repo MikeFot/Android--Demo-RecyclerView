@@ -3,7 +3,7 @@ package com.michaelfotiadis.demorecyclerview.core.data.validation;
 import com.michaelfotiadis.demorecyclerview.core.data.validation.validators.AlbumValidator;
 import com.michaelfotiadis.demorecyclerview.core.data.validation.validators.Validator;
 import com.michaelfotiadis.demorecyclerview.core.models.album.Album;
-import com.michaelfotiadis.demorecyclerview.core.models.base.ApiModel;
+import com.michaelfotiadis.demorecyclerview.core.models.base.BaseApiModel;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public final class ValidatorProcessorImpl implements ValidatorProcessor {
 
-    private final Map<Class<? extends ApiModel>, Validator> mValidators;
+    private final Map<Class<? extends BaseApiModel>, Validator> mValidators;
 
     public ValidatorProcessorImpl() {
         mValidators = new HashMap<>();
@@ -24,7 +24,7 @@ public final class ValidatorProcessorImpl implements ValidatorProcessor {
     }
 
     @Override
-    public <T extends ApiModel> Validator<T> getValidator(final Class<T> clazz) {
+    public <T extends BaseApiModel> Validator<T> getValidator(final Class<T> clazz) {
         //noinspection unchecked
         return mValidators.get(clazz);
     }

@@ -2,12 +2,12 @@ package com.michaelfotiadis.demorecyclerview.core.models.album;
 
 import android.os.Parcel;
 
-import com.michaelfotiadis.demorecyclerview.core.models.base.ApiModel;
+import com.michaelfotiadis.demorecyclerview.core.models.base.BaseApiModel;
 
 /**
  *
  */
-public interface Album extends ApiModel {
+public interface Album extends BaseApiModel {
     Creator<Album> CREATOR = new Creator<Album>() {
         @Override
         public Album createFromParcel(final Parcel source) {
