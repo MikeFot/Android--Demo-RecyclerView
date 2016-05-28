@@ -107,7 +107,11 @@ dependencies {
     compile "com.android.support:recyclerview-v7:$appCompatLibVersion"
 
     compile 'com.squareup.picasso:picasso:2.5.0'
+    compile 'com.squareup.okhttp:okhttp:2.5.0'
+
     compile 'com.jakewharton:butterknife:7.0.1'
+
+    compile 'me.grantland:autofittextview:0.2.1'
 
     compile 'com.android.support:appcompat-v7:23.4.0'
 

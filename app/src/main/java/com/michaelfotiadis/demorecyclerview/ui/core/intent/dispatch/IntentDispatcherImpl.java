@@ -2,8 +2,10 @@ package com.michaelfotiadis.demorecyclerview.ui.core.intent.dispatch;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 
+import com.michaelfotiadis.demorecyclerview.ui.core.intent.NavLog;
 import com.michaelfotiadis.demorecyclerview.ui.core.intent.factory.IntentFactory;
 import com.michaelfotiadis.demorecyclerview.ui.core.intent.factory.IntentFactoryImpl;
 import com.michaelfotiadis.demorecyclerview.utils.AppLog;
@@ -20,6 +22,16 @@ public class IntentDispatcherImpl implements IntentDispatcher {
     public IntentDispatcherImpl(final Activity activity) {
         this.mIntentFactory = new IntentFactoryImpl(activity);
         this.mDispatcher = new IntentDispatcherInternal(activity);
+    }
+
+    @Override
+    public void open(final View source, final Uri uri) {
+        NavLog.d("Opening Uri: " + uri);
+        final Intent intent = mIntentFactory.getOpenIntent(uri);
+        mDispatcher
+                .withView(source)
+                .withAnimation(ActivityAnimation.SCALE_UP_FROM_VIEW)
+                .dispatch(intent);
     }
 
     @Override

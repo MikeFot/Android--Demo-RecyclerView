@@ -1,6 +1,7 @@
 package com.michaelfotiadis.demorecyclerview.ui.core.intent.factory;
 
 import android.content.Intent;
+import android.net.Uri;
 
 /**
  *
@@ -8,4 +9,6 @@ import android.content.Intent;
 public interface IntentFactory {
 
     Intent getHomeIntent();
+
+    Intent getOpenIntent(Uri uri);
 }

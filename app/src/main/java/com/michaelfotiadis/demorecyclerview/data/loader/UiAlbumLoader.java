@@ -18,13 +18,13 @@ import java.util.Locale;
 /**
  *
  */
-public class UiMovieLoader extends DataFeedLoaderAbstract<UiAlbum> {
+public class UiAlbumLoader extends DataFeedLoaderAbstract<UiAlbum> {
 
     private static final int PAGE_LIMIT = 10;
     final DataProvider mDataProvider;
     final AlbumFactory mFactory;
 
-    public UiMovieLoader(final Activity activity) {
+    public UiAlbumLoader(final Activity activity) {
         super(activity);
         mDataProvider = new DataProvider();
         mFactory = new AlbumFactory();
