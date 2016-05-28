@@ -10,16 +10,16 @@ import butterknife.Bind;
 import me.grantland.widget.AutofitTextView;
 
 
-public final class AlbumRecyclerViewHolder extends BaseRecyclerViewHolder {
+/*package*/ final class AlbumRecyclerViewHolder extends BaseRecyclerViewHolder {
 
     private static final int LAYOUT_ID = R.layout.list_item_album_overview;
 
     @Bind(R.id.image)
-    protected ImageView imageView;
+    ImageView imageView;
     @Bind(R.id.title)
-    protected AutofitTextView title;
+    AutofitTextView title;
     @Bind(R.id.subtitle)
-    protected AutofitTextView subTitle;
+    AutofitTextView subTitle;
 
     public AlbumRecyclerViewHolder(final View view) {
         super(view);

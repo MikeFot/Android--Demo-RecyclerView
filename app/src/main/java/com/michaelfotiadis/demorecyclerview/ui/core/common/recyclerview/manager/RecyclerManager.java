@@ -4,7 +4,6 @@ import android.support.v7.widget.RecyclerView;
 
 import com.michaelfotiadis.demorecyclerview.ui.core.common.error.errorpage.QuoteOnClickListenerWrapper;
 import com.michaelfotiadis.demorecyclerview.ui.core.common.recyclerview.adapter.BaseRecyclerViewAdapter;
-import com.michaelfotiadis.demorecyclerview.ui.core.common.recyclerview.animation.ItemAnimator;
 import com.michaelfotiadis.demorecyclerview.ui.core.common.viewmanagement.UiStateKeeper;
 
 import java.util.Collection;
@@ -32,13 +31,6 @@ public final class RecyclerManager<D> {
                         updateUiState();
                     }
                 });
-
-        if (builder.animator == null) {
-            builder.recycler.setItemAnimator(new ItemAnimator());
-        } else {
-            builder.recycler.setItemAnimator(builder.animator);
-        }
-
         builder.recycler.setAdapter(adapter);
     }
 
@@ -101,7 +93,6 @@ public final class RecyclerManager<D> {
 
     public static class Builder<D> {
         private final BaseRecyclerViewAdapter<D, ?> adapter;
-        private RecyclerView.ItemAnimator animator = new ItemAnimator();
         private CharSequence emptyMessage;
         private RecyclerView recycler;
         private UiStateKeeper stateKeeper;
@@ -121,11 +112,6 @@ public final class RecyclerManager<D> {
             }
 
             return new RecyclerManager<>(this);
-        }
-
-        public Builder<D> setAnimator(final RecyclerView.ItemAnimator animator) {
-            this.animator = animator;
-            return this;
         }
 
         public Builder<D> setEmptyMessage(final CharSequence emptyMessage) {

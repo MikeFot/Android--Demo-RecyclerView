@@ -21,7 +21,7 @@ public abstract class BaseRecyclerViewAdapter<D, VH extends RecyclerView.ViewHol
     private final IntentDispatcher mIntentDispatcher;
     private final List<D> mItems = new ArrayList<>();
     private boolean dataAdditionAttempted = false;
-    private OnItemsChangedListener listener;
+    private OnItemsChangedListener mListener;
 
     protected BaseRecyclerViewAdapter(final Activity activity) {
         mActivity = activity;
@@ -86,8 +86,8 @@ public abstract class BaseRecyclerViewAdapter<D, VH extends RecyclerView.ViewHol
     protected abstract boolean isItemValid(final D item);
 
     private void callItemsChangedListener() {
-        if (listener != null) {
-            listener.onItemsChanged();
+        if (mListener != null) {
+            mListener.onItemsChanged();
         }
     }
 
@@ -162,7 +162,7 @@ public abstract class BaseRecyclerViewAdapter<D, VH extends RecyclerView.ViewHol
     }
 
     public void setOnItemsChangedListener(final OnItemsChangedListener listener) {
-        this.listener = listener;
+        this.mListener = listener;
     }
 
     public interface OnItemsChangedListener {

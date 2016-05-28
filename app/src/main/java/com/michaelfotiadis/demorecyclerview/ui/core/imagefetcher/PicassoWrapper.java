@@ -9,8 +9,6 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 
-import java.io.File;
-
 /**
  *
  */
@@ -20,21 +18,6 @@ import java.io.File;
 
     public PicassoWrapper(final Activity activity) {
         mActivity = activity;
-    }
-
-
-    public void load(final File file, final ImageFetcherRequest request, final ImageView imageView, final ImageFetcherCallback callback) {
-        loadInternal(getPicasso(mActivity).load(file),
-                request,
-                imageView,
-                callback);
-    }
-
-    public void load(final int resId, final ImageFetcherRequest request, final ImageView imageView, final ImageFetcherCallback callback) {
-        loadInternal(getPicasso(mActivity).load(resId),
-                request,
-                imageView,
-                callback);
     }
 
     public void load(final ImageFetcherRequest request, final ImageView imageView, final ImageFetcherCallback callback) {
@@ -81,9 +64,10 @@ import java.io.File;
         return PICASSO_SINGLETON.getInstance(context);
     }
 
-    public static Callback getWrappedCallback(final ImageFetcherCallback callback) {
+    private static Callback getWrappedCallback(final ImageFetcherCallback callback) {
         final Callback picassoCallback;
 
+        //noinspection IfMayBeConditional
         if (callback == null) {
             picassoCallback = null;
         } else {

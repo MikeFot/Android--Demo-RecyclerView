@@ -1,7 +1,5 @@
 package com.michaelfotiadis.demorecyclerview.ui.core.imagefetcher;
 
-import android.widget.ImageView;
-
 /**
  *
  */
@@ -40,14 +38,6 @@ public final class ImageFetcherRequest {
         return scaleType;
     }
 
-    public void load(final ImageFetcher fetcher, final ImageView target) {
-        load(fetcher, target, null);
-    }
-
-    public void load(final ImageFetcher fetcher, final ImageView target, final ImageFetcherCallback callback) {
-        fetcher.load(this, target, callback);
-    }
-
     @Override
     public String toString() {
         return "ImageFetcherRequest{" +
@@ -59,6 +49,7 @@ public final class ImageFetcherRequest {
                 '}';
     }
 
+    @SuppressWarnings("unused")
     public static final class Builder {
         private int drawableId;
         private int errorResId;

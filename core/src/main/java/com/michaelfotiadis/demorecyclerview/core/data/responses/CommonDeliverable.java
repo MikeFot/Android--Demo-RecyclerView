@@ -9,7 +9,7 @@ public final class CommonDeliverable<T> implements CommonTimedElement {
     private final T mObjectContent;
     private final CommonTimedElement mTimedElement;
 
-    public CommonDeliverable(final T parcelableObject) {
+    private CommonDeliverable(final T parcelableObject) {
         this.mObjectContent = parcelableObject;
         this.mTimedElement = new CommonTimedElementImpl();
     }

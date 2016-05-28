@@ -60,10 +60,4 @@ public class IntentDispatcherImpl implements IntentDispatcher {
                 .dispatch(intent);
     }
 
-
-    @Override
-    public IntentFactory getIntentFactory() {
-        return mIntentFactory;
-    }
-
 }

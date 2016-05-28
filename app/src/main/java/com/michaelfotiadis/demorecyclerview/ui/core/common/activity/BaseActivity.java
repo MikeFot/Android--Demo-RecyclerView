@@ -35,11 +35,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
-    protected Bundle getExtras() {
-        return getIntent().getExtras();
-    }
-
-
     public ActivityNotificationController getNotificationController() {
         return mNotificationController;
     }
@@ -50,18 +45,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         for (final Fragment fragment : getSupportFragmentManager().getFragments()) {
             fragment.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (this instanceof BackBlocker) {
-            final boolean backBlocked = ((BackBlocker) this).isBackBlockingEnabled();
-            if (!backBlocked) {
-                super.onBackPressed();
-            }
-        } else {
-            super.onBackPressed();
         }
     }
 
@@ -88,10 +71,10 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onCreateCommon(savedInstanceState);
+        onCreateCommon();
     }
 
-    private void onCreateCommon(final Bundle savedInstanceState) {
+    private void onCreateCommon() {
         CrashlyticsLogKeyController.onCreate(this);
         mImageFetcher = new ImageFetcherImpl(this);
         mIntentDispatcher = new IntentDispatcherImpl(this);
@@ -109,7 +92,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         throw new UnsupportedOperationException("Only setContentView(layoutResID) is supported");
     }
 
-    protected void setupActionbar() {
+    private void setupActionbar() {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);

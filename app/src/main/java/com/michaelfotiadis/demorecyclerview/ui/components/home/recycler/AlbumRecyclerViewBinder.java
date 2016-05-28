@@ -17,13 +17,13 @@ import butterknife.ButterKnife;
 /**
  *
  */
-public class AlbumRecyclerViewBinder extends BaseRecyclerViewBinder<AlbumRecyclerViewHolder, UiAlbum> {
+/*package*/ class AlbumRecyclerViewBinder extends BaseRecyclerViewBinder<AlbumRecyclerViewHolder, UiAlbum> {
 
     private static final int DEFAULT_IMAGE_PLACEHOLDER = R.drawable.ic_insert_photo_black_24dp;
 
-    protected AlbumRecyclerViewBinder(final Context context,
-                                      final ImageFetcher imageFetcher,
-                                      final IntentDispatcher intentDispatcher) {
+    /*package*/ AlbumRecyclerViewBinder(final Context context,
+                                        final ImageFetcher imageFetcher,
+                                        final IntentDispatcher intentDispatcher) {
         super(context, imageFetcher, intentDispatcher);
     }
 

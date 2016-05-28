@@ -10,22 +10,22 @@ import java.util.List;
 /**
  *
  */
-public abstract class DataFeedLoaderAbstract<D extends Parcelable> {
+/*package*/ abstract class DataFeedLoaderAbstract<D extends Parcelable> {
 
     private final Activity mActivity;
     private DataFeedLoaderCallback<D> mCallback;
 
-    public DataFeedLoaderAbstract(final Activity activity) {
+    /*package*/ DataFeedLoaderAbstract(final Activity activity) {
         mActivity = activity;
     }
 
-    protected Activity getActivity() {
+    /*package*/ Activity getActivity() {
         return mActivity;
     }
 
     public abstract void loadData();
 
-    protected void notifyError(final UiDataLoadError error) {
+    /*package*/ void notifyError(final UiDataLoadError error) {
         if (mCallback != null) {
             if (mActivity == null) {
                 mCallback.onError(error);
@@ -40,7 +40,7 @@ public abstract class DataFeedLoaderAbstract<D extends Parcelable> {
         }
     }
 
-    protected void notifySuccess(final List<D> items) {
+    /*package*/ void notifySuccess(final List<D> items) {
         if (mCallback != null) {
             if (mActivity == null) {
                 mCallback.onSuccess(items);

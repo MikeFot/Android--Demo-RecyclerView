@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 
+import com.michaelfotiadis.demorecyclerview.BuildConfig;
 import com.michaelfotiadis.demorecyclerview.utils.AppLog;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
@@ -19,7 +20,7 @@ import java.util.concurrent.ExecutorService;
     // PICASSO SETTINGS
     //
     //@formatter:off
-    private static final boolean PICASSO_DEBUG_ENABLED = true;
+    private static final boolean PICASSO_DEBUG_ENABLED = BuildConfig.DEBUG;
     private static final ExecutorService PICASSO_EXECUTOR = null; // USE THE DEFAULT PICASSO EXECUTOR
     //@formatter:on
 

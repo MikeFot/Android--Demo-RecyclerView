@@ -29,13 +29,6 @@ public final class ImageFetcherImpl implements ImageFetcher {
     }
 
     @Override
-    public void load(final ImageFetcherRequest request,
-                     final ImageView imageView,
-                     final ImageFetcherCallback callback) {
-        internalLoad(request, imageView, callback);
-    }
-
-    @Override
     public void loadIntoImageView(final String imagePath,
                                   final int placeholder,
                                   final ImageView imageView) {
@@ -46,54 +39,6 @@ public final class ImageFetcherImpl implements ImageFetcher {
                 .build();
 
         internalLoad(request, imageView, null);
-    }
-
-
-    @Override
-    public void loadIntoImageView(final int resId,
-                                  final int placeholder,
-                                  final ImageView imageView) {
-
-        final ImageFetcherRequest request = new ImageFetcherRequest.Builder()
-                .withDrawableResId(resId)
-                .withPlaceholderResId(placeholder)
-                .build();
-
-        internalLoad(request, imageView, null);
-    }
-
-    @Override
-    public void loadIntoImageView(final String imagePath,
-                                  final int placeholder,
-                                  final ImageView imageView,
-                                  final ImageFetcherCallback callback) {
-        final ImageFetcherRequest request = new ImageFetcherRequest.Builder()
-                .withPath(imagePath)
-                .withPlaceholderResId(placeholder)
-                .build();
-
-        internalLoad(request, imageView, callback);
-    }
-
-    @Override
-    public void loadIntoImageView(final String imagePath,
-                                  final ImageView imageView) {
-        final ImageFetcherRequest request = new ImageFetcherRequest.Builder()
-                .withPath(imagePath)
-                .build();
-
-        internalLoad(request, imageView, null);
-    }
-
-    @Override
-    public void loadIntoImageView(final String imagePath,
-                                  final ImageView imageView,
-                                  final ImageFetcherCallback callback) {
-        final ImageFetcherRequest request = new ImageFetcherRequest.Builder()
-                .withPath(imagePath)
-                .build();
-
-        internalLoad(request, imageView, callback);
     }
 
     private static ImageFetcherRequest sanitise(final ImageFetcherRequest req) {

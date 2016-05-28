@@ -32,13 +32,6 @@ import com.michaelfotiadis.demorecyclerview.ui.core.intent.NavLog;
         this.activity = activity;
     }
 
-    private void cleanUp() {
-        this.mAnimation = null;
-        this.mSourceView = null;
-        this.mForResult = false;
-        this.mRequestCode = Activity.RESULT_OK;
-    }
-
     public void dispatch(final Intent intent) {
         if (intent == null) {
             AppToast.showDebug(activity, "Intent was null!", AppToast.Length.SHORT);
@@ -56,12 +49,6 @@ import com.michaelfotiadis.demorecyclerview.ui.core.intent.NavLog;
             }
         }
         cleanUp();
-    }
-
-    public IntentDispatcherInternal forResult(final int requestCode) {
-        this.mForResult = true;
-        this.mRequestCode = requestCode;
-        return this;
     }
 
     private Bundle getBundle(final ActivityAnimation activityAnimation) {
@@ -83,15 +70,27 @@ import com.michaelfotiadis.demorecyclerview.ui.core.intent.NavLog;
         }
     }
 
+    private void cleanUp() {
+        this.mAnimation = null;
+        this.mSourceView = null;
+        this.mForResult = false;
+        this.mRequestCode = Activity.RESULT_OK;
+    }
+
+    private Bundle getSlideInFromLeftBundle() {
+        return getCustomAnimationBundle(R.anim.slide_in_right, R.anim.zoom_out);
+    }
+
     private Bundle getCustomAnimationBundle(final int animationIn, final int animationOut) {
         final ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.
                 makeCustomAnimation(activity, animationIn, animationOut);
         return activityOptionsCompat.toBundle();
     }
 
-
-    private Bundle getSlideInFromLeftBundle() {
-        return getCustomAnimationBundle(R.anim.slide_in_right, R.anim.zoom_out);
+    public IntentDispatcherInternal forResult(final int requestCode) {
+        this.mForResult = true;
+        this.mRequestCode = requestCode;
+        return this;
     }
 
     public IntentDispatcherInternal withAnimation(final ActivityAnimation animation) {

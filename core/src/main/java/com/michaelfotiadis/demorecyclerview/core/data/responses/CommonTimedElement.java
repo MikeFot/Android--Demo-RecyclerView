@@ -3,7 +3,7 @@ package com.michaelfotiadis.demorecyclerview.core.data.responses;
 /**
  *
  */
-public interface CommonTimedElement {
+/*package*/ interface CommonTimedElement {
 
     long getCreationTime();
 }

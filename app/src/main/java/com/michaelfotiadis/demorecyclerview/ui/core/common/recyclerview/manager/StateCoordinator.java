@@ -50,11 +50,7 @@ import com.michaelfotiadis.demorecyclerview.ui.core.common.viewmanagement.UiStat
             state = State.ERROR;
         } else {
             if (adapter.getItemCount() == 0) {
-                if (adapter.hasAttemptedDataAddition()) {
-                    state = State.EMPTY;
-                } else {
-                    state = State.PROGRESS;
-                }
+                state = adapter.hasAttemptedDataAddition() ? State.EMPTY : State.PROGRESS;
             } else {
                 state = State.CONTENT;
             }

@@ -19,6 +19,7 @@ public final class UiDataLoadErrorFactory {
                                               final CommonError error) {
         final UiDataLoadError.ErrorKind kind = translate(error.getKind());
 
+        //noinspection IfMayBeConditional
         if (error.getKind().equals(CommonErrorKind.NO_NETWORK)) {
             return createDeviceOfflineError(context);
         } else {

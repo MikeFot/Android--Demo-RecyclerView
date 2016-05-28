@@ -43,6 +43,7 @@ public abstract class BaseRecyclerViewBinder<VH extends BaseRecyclerViewHolder, 
 
     protected abstract void reset(final VH holder);
 
+    @SuppressWarnings("MethodMayBeStatic")
     protected void showView(final View view, final boolean show) {
         ViewUtils.showView(view, show);
     }

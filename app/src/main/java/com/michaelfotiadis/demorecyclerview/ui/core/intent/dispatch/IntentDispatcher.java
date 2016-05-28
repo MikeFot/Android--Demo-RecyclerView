@@ -4,10 +4,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-import com.michaelfotiadis.demorecyclerview.ui.core.intent.factory.IntentFactory;
-
 /**
  */
+@SuppressWarnings("unused")
 public interface IntentDispatcher {
 
     void open(View source, Uri uri);
@@ -18,5 +17,4 @@ public interface IntentDispatcher {
 
     void openHomeActivity();
 
-    IntentFactory getIntentFactory();
 }

@@ -22,11 +22,6 @@ public class QuoteOnClickListenerWrapper {
         this.mListener = listener;
     }
 
-    public QuoteOnClickListenerWrapper(final View.OnClickListener listener) {
-        this.mResId = 0;
-        this.mListener = listener;
-    }
-
     public View.OnClickListener getListener() {
         return mListener;
     }

@@ -19,23 +19,13 @@ public class AnimationHelper {
         this.mContext = context;
     }
 
-    public Bundle getCustomAnimationBundle(final int animationIn, final int animationOut) {
-        final ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(mContext, animationIn, animationOut);
-        return activityOptionsCompat.toBundle();
-    }
-
     public Bundle getScaleUpBundle(final View view) {
-        return getScaleUpBundle(view, view.getWidth(), view.getHeight());
+        return getScaleUpBundleInternal(view, view.getWidth(), view.getHeight());
     }
 
     @SuppressWarnings("MethodMayBeStatic")
-    public Bundle getScaleUpBundle(final View view, final int width, final int height) {
+    private Bundle getScaleUpBundleInternal(final View view, final int width, final int height) {
         final ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeScaleUpAnimation(view, 0, 0, width, height);
-        return activityOptionsCompat.toBundle();
-    }
-
-    public Bundle getSlideInFromLeftBundle() {
-        final ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeCustomAnimation(mContext, R.anim.slide_in_right, R.anim.zoom_out);
         return activityOptionsCompat.toBundle();
     }
 

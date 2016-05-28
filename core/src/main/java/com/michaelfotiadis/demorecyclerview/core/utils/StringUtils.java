@@ -231,7 +231,7 @@ public final class StringUtils {
         }
 
         //noinspection RedundantIfStatement
-        if (text.trim().length() > 0 && !(NULL.equalsIgnoreCase(text.trim()))) {
+        if (!text.trim().isEmpty() && !(NULL.equalsIgnoreCase(text.trim()))) {
             return true;
         } else {
             return false;
