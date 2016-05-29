@@ -1,4 +1,4 @@
-# Android--Demo-RecyclerView
+# Android Demo RecyclerView
 Demo Android Material Design application showcasing a single activity with a RecyclerView and Cards.
 
 ## Structure
