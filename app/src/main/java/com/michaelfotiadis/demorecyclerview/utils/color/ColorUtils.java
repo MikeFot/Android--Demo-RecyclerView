@@ -69,6 +69,7 @@ public final class ColorUtils {
      * Initialize the color list that we have.
      */
     private static ArrayList<ColorName> initColorList() {
+        // TODO extract string resources
         final ArrayList<ColorName> colorList = new ArrayList<>();
         colorList.add(new ColorName("Alice Blue", 0xF0, 0xF8, 0xFF));
         colorList.add(new ColorName("Antique White", 0xFA, 0xEB, 0xD7));
@@ -82,8 +83,8 @@ public final class ColorUtils {
         colorList.add(new ColorName("Blue", 0x00, 0x00, 0xFF));
         colorList.add(new ColorName("Blue Violet", 0x8A, 0x2B, 0xE2));
         colorList.add(new ColorName("Brown", 0xA5, 0x2A, 0x2A));
-        colorList.add(new ColorName("BurlyWood", 0xDE, 0xB8, 0x87));
-        colorList.add(new ColorName("CadetBlue", 0x5F, 0x9E, 0xA0));
+        colorList.add(new ColorName("Burly Wood", 0xDE, 0xB8, 0x87));
+        colorList.add(new ColorName("Cadet Blue", 0x5F, 0x9E, 0xA0));
         colorList.add(new ColorName("Chartreuse", 0x7F, 0xFF, 0x00));
         colorList.add(new ColorName("Chocolate", 0xD2, 0x69, 0x1E));
         colorList.add(new ColorName("Coral", 0xFF, 0x7F, 0x50));
@@ -159,7 +160,7 @@ public final class ColorUtils {
         colorList.add(new ColorName("Medium Slate Blue", 0x7B, 0x68, 0xEE));
         colorList.add(new ColorName("Medium Spring Green", 0x00, 0xFA, 0x9A));
         colorList.add(new ColorName("Medium Turquoise", 0x48, 0xD1, 0xCC));
-        colorList.add(new ColorName("Medium VioletRed", 0xC7, 0x15, 0x85));
+        colorList.add(new ColorName("Medium Violet Red", 0xC7, 0x15, 0x85));
         colorList.add(new ColorName("Midnight Blue", 0x19, 0x19, 0x70));
         colorList.add(new ColorName("Mint Cream", 0xF5, 0xFF, 0xFA));
         colorList.add(new ColorName("Misty Rose", 0xFF, 0xE4, 0xE1));
