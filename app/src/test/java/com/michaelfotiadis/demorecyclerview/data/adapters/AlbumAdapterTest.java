@@ -1,4 +1,4 @@
-package com.michaelfotiadis.demorecyclerview.data.converter;
+package com.michaelfotiadis.demorecyclerview.data.adapters;
 
 import com.michaelfotiadis.demorecyclerview.core.models.album.Album;
 import com.michaelfotiadis.demorecyclerview.data.models.album.UiAlbum;
@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 /**
  *
  */
-public class AlbumFactoryTest {
+public class AlbumAdapterTest {
 
     private static final String URL_1_1 = "http://google.com/1";
     private static final String URL_1_2 = "https://www.facebook.com/1";
@@ -36,7 +36,7 @@ public class AlbumFactoryTest {
         albumList.add(album1);
         albumList.add(album2);
 
-        final AlbumFactory factory = new AlbumFactory();
+        final AlbumAdapter factory = new AlbumAdapter();
         assertNotNull(factory);
         final List<UiAlbum> result = factory.createUiAlbumList(albumList);
 
@@ -63,7 +63,7 @@ public class AlbumFactoryTest {
     @Test
     public void testCreateUiAlbum() throws Exception {
 
-        final AlbumFactory factory = new AlbumFactory();
+        final AlbumAdapter factory = new AlbumAdapter();
         assertNotNull(factory);
         final Album album1 = getAlbum1();
         assertNotNull(album1);

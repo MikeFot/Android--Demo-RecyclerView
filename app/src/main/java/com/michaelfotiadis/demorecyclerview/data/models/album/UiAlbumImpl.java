@@ -7,20 +7,25 @@ import android.os.Parcel;
  */
 public class UiAlbumImpl implements UiAlbum {
 
+
     private final String mTitle;
     private final String mSubtitle;
     private final String mImageUrl;
+    private final String mLink;
+
 
     private UiAlbumImpl(final Builder builder) {
         mImageUrl = builder.mImageUrl;
         mTitle = builder.mTitle;
         mSubtitle = builder.mSubtitle;
+        mLink = builder.mLink;
     }
 
     protected UiAlbumImpl(final Parcel in) {
         this.mTitle = in.readString();
         this.mSubtitle = in.readString();
         this.mImageUrl = in.readString();
+        this.mLink = in.readString();
     }
 
     public static Builder newBuilder() {
@@ -32,6 +37,7 @@ public class UiAlbumImpl implements UiAlbum {
         builder.mImageUrl = copy.mImageUrl;
         builder.mTitle = copy.mTitle;
         builder.mSubtitle = copy.mSubtitle;
+        builder.mLink = copy.mLink;
         return builder;
     }
 
@@ -50,6 +56,10 @@ public class UiAlbumImpl implements UiAlbum {
         return mTitle;
     }
 
+    public String getLink() {
+        return mLink;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -60,12 +70,14 @@ public class UiAlbumImpl implements UiAlbum {
         dest.writeString(this.mTitle);
         dest.writeString(this.mSubtitle);
         dest.writeString(this.mImageUrl);
+        dest.writeString(this.mLink);
     }
 
     public static final class Builder {
         private String mImageUrl;
         private String mTitle;
         private String mSubtitle;
+        private String mLink;
 
         private Builder() {
         }
@@ -85,8 +97,14 @@ public class UiAlbumImpl implements UiAlbum {
             return this;
         }
 
+        public Builder withLink(final String val) {
+            mLink = val;
+            return this;
+        }
+
         public UiAlbum build() {
             return new UiAlbumImpl(this);
         }
+
     }
 }

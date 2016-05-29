@@ -7,7 +7,7 @@ import com.michaelfotiadis.demorecyclerview.core.data.responses.CommonCallback;
 import com.michaelfotiadis.demorecyclerview.core.data.responses.CommonDeliverable;
 import com.michaelfotiadis.demorecyclerview.core.data.responses.CommonError;
 import com.michaelfotiadis.demorecyclerview.core.models.album.Album;
-import com.michaelfotiadis.demorecyclerview.data.converter.AlbumFactory;
+import com.michaelfotiadis.demorecyclerview.data.adapters.AlbumAdapter;
 import com.michaelfotiadis.demorecyclerview.data.error.UiDataLoadErrorFactory;
 import com.michaelfotiadis.demorecyclerview.data.models.album.UiAlbum;
 import com.michaelfotiadis.demorecyclerview.utils.AppLog;
@@ -22,12 +22,12 @@ public class UiAlbumLoader extends DataFeedLoaderAbstract<UiAlbum> {
 
     private static final int PAGE_LIMIT = 10;
     final DataProvider mDataProvider;
-    final AlbumFactory mFactory;
+    final AlbumAdapter mFactory;
 
     public UiAlbumLoader(final Activity activity) {
         super(activity);
         mDataProvider = new DataProvider();
-        mFactory = new AlbumFactory();
+        mFactory = new AlbumAdapter();
     }
 
     @Override

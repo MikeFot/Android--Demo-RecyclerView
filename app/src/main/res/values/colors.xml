@@ -12,6 +12,10 @@
     <color name="icons">@color/md_grey_900</color>
     <color name="divider">#B6B6B6</color>
 
+    <color name="color_control_normal">@color/md_grey_500</color>
+    <color name="color_control_activated">@color/md_grey_800</color>
+    <color name="color_control_highlight">@color/md_indigo_600</color>
+
     <drawable name="pressed_gray">@color/md_grey_700</drawable>
     <drawable name="selected_gray">@color/md_grey_500</drawable>
 

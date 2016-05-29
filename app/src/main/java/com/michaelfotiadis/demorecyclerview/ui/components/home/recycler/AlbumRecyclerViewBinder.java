@@ -41,10 +41,10 @@ import butterknife.ButterKnife;
             );
 
             if (!TextUtils.isEmpty(item.getImageUrl())) {
-                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                holder.getRoot().setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(final View view) {
-                        getIntentDispatcher().open(holder.imageView, Uri.parse(item.getSubtitle()));
+                        getIntentDispatcher().open(holder.imageView, Uri.parse(item.getLink()));
                     }
                 });
 

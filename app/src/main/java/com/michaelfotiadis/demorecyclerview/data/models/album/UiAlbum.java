@@ -25,4 +25,6 @@ public interface UiAlbum extends BaseUiModel {
     String getSubtitle();
 
     String getTitle();
+
+    String getLink();
 }
