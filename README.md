@@ -27,6 +27,9 @@ Using GSON with a custom Type Adapter Factory mapping interfaces to implementati
 ### Recycler Views
 - Recycler Views have a UI State Coordinator attached to them which handles empty, error and with data states.
 
+### Colour Name Loading
+Modification of https://gist.github.com/XiaoxiaoLi/8031146
+
 ## Libraries
 Butterknife, Picasso, Retrofit 2, AutoFitTextView, GSON, Mockito
 
