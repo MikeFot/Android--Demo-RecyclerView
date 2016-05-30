@@ -3,8 +3,8 @@ Demo Android Material Design application showcasing a single activity with a Rec
 
 ## Structure
 The application is using 2 modules: 
-- ###core###: contains internal data providers and core business logic
-- ###app###: contains base UI components, their implementations and dedicated data loaders.
+- core: contains internal data providers and core business logic
+- app: contains base UI components, their implementations and dedicated data loaders.
 
 ## Core
 
