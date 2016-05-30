@@ -42,6 +42,14 @@ Home Screen (API 22 Landscape)
 
 ![Alt text](/screens/api_22_landscape.png?raw=true "Home Screen (API 22 Landscape)")
 
+Error Screen Variant 1 (API 22 Portrait)
+
+![Alt text](/screens/error_1_api_22.png?raw=true "Error Screen Variant 1 (API 22 Portrait)")
+
+Error Screen Variant 2 (API 22 Portrait)
+
+![Alt text](/screens/error_2_api_22.png?raw=true "Error Screen Variant 2 (API 22 Portrait)")
+
 Home Screen (API 19 Portrait)
 
 ![Alt text](/screens/api_19_portrait.png?raw=true "Home Screen (API 19 Portrait)")
