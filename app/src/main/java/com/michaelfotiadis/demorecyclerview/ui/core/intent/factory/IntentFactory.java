@@ -10,5 +10,7 @@ public interface IntentFactory {
 
     Intent getHomeIntent();
 
+    Intent getDevIntent();
+
     Intent getOpenIntent(Uri uri);
 }

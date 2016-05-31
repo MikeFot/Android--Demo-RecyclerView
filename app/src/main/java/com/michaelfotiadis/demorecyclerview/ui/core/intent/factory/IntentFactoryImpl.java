@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
+import com.michaelfotiadis.demorecyclerview.optional.DeveloperActivity;
 import com.michaelfotiadis.demorecyclerview.ui.components.home.HomeActivity;
 
 
@@ -23,6 +24,11 @@ public class IntentFactoryImpl implements IntentFactory {
         final Intent intent = HomeActivity.getInstance(mContext);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         return intent;
+    }
+
+    @Override
+    public Intent getDevIntent() {
+        return DeveloperActivity.getInstance(mContext);
     }
 
     @Override

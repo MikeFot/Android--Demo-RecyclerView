@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
+import com.michaelfotiadis.demorecyclerview.BuildConfig;
 import com.michaelfotiadis.demorecyclerview.ui.core.intent.NavLog;
 import com.michaelfotiadis.demorecyclerview.ui.core.intent.factory.IntentFactory;
 import com.michaelfotiadis.demorecyclerview.ui.core.intent.factory.IntentFactoryImpl;
@@ -58,6 +59,18 @@ public class IntentDispatcherImpl implements IntentDispatcher {
         mDispatcher
                 .withAnimation(ActivityAnimation.SLIDE_UP_FROM_BOTTOM)
                 .dispatch(intent);
+    }
+
+    @Override
+    public void openDevScreen(final View source) {
+        if (BuildConfig.DEV_MODE) {
+            mDispatcher
+                    .withView(source)
+                    .withAnimation(ActivityAnimation.SCALE_UP_FROM_VIEW)
+                    .dispatch(mIntentFactory.getDevIntent());
+        } else {
+            throw new IllegalStateException("You should NOT be here");
+        }
     }
 
 }

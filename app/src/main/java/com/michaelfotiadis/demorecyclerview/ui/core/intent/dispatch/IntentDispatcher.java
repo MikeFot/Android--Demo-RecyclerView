@@ -17,4 +17,5 @@ public interface IntentDispatcher {
 
     void openHomeActivity();
 
+    void openDevScreen(View source);
 }
